@@ -1,4 +1,3 @@
-load("toxseq.RData")
 library(shiny)
 library(tiff)
 library(ggplot2)
