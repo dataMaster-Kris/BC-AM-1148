@@ -30,18 +30,15 @@ shinyUI(fluidPage(
     
     mainPanel(
       
-      imageOutput("legend", width = "100%", height = 100), 
+      imageOutput("legend", width = "100%", height = 120), 
       
       fluidRow(
         splitLayout(cellWidths = c("50%", "50%"),
-                    plotOutput("mainUMAP"), 
-                    plotOutput("variableUMAP"))
+                    imageOutput("mainUMAP", width = "100%"), #plotOutput("mainUMAP"), 
+                    plotOutput("geneExpDist"))#, #plotOutput("variableUMAP"))
       ),
       
-      plotOutput("geneExpDist"),
-      
       plotOutput("clusterWiseGeneExp"),
-      plotOutput("cellgroupWiseGeneExp"),
       
       dataTableOutput("DEgenesTable")
       

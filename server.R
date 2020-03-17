@@ -26,23 +26,17 @@ shinyServer(function(input, output, session) {
 
   })
 
-  output$mainUMAP <- renderPlot({
-
-    DimPlot(get(input$dataset),
-            reduction = "umap") +
-      ggtitle("Clusters")
-
-  })
-
-  output$variableUMAP <- renderPlot({
-
-    DimPlot(get(input$dataset),
-            reduction = "umap",
-            group.by = "toxseq_label") +
-      scale_color_manual(values = c("black", "red", "grey")) +
-      ggtitle("Tox-seq overlay")
-
-  })
+  output$mainUMAP <- renderImage({
+    img_file <- if(input$dataset == "Toxseq_all_clusters_dataset1") {
+      "Shiny_Allclusters_Figure.png"
+    } else if (input$dataset == "Toxseq_microglia_dataset2") {
+      "Shiny_Microglia_clusters_Figure.png"
+    } else "Shiny_monocytes_figure.png"
+    list(src = img_file,
+         width = 380,
+         height = 400
+         )
+  }, deleteFile = FALSE)
 
   output$geneExpDist <- renderPlot({
 
@@ -58,14 +52,6 @@ shinyServer(function(input, output, session) {
     VlnPlot(get(input$dataset),
             features = input$gene,
             group.by = "cluster_labels")
-
-  })
-
-  output$cellgroupWiseGeneExp <- renderPlot({
-
-    VlnPlot(get(input$dataset),
-            features = input$gene,
-            group.by = "toxseq_label")
 
   })
 
