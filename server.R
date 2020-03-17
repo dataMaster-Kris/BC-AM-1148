@@ -7,11 +7,13 @@ shinyServer(function(input, output, session) {
   
   output$legend <- renderImage({
     img_file <- if(input$dataset == "Toxseq_all_clusters_dataset1") {
-      "Allclusters_legend.png"
+      "Legend_allclusters.png"
     } else if (input$dataset == "Toxseq_microglia_dataset2") {
-      "microglia_legend-01.png"
-    } else "monocyte-macrophage_legend-01.png"
-    list(src = img_file)
+      "microglia_legend.png"
+    } else "mono_mac_legend.png"
+    list(src = img_file,
+         width = 400,
+         height = 100)
   }, deleteFile = FALSE)
   
   output$clusterNumUI <- renderUI({

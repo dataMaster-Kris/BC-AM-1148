@@ -30,7 +30,7 @@ shinyUI(fluidPage(
     
     mainPanel(
       
-      imageOutput("legend", height = 120), 
+      imageOutput("legend", width = "100%", height = 100), 
       
       fluidRow(
         splitLayout(cellWidths = c("50%", "50%"),
