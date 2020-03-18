@@ -2,9 +2,9 @@
 
 The R Shiny application in this repository has been deployed on the [shinyapps.io account of Tox-seq](https://toxseq.shinyapps.io/scrnaseq_viewer/). 
 
-**Citation:** Mendiola et al., Title of the paper, [Nature Immunology](https://doi.org/10.1038/s41590-020-0654-0), 2020. 
+**Citation:** [Mendiola et al., Transcriptional profiling and therapeutic targeting of oxidative stress in neuroinflammation, Nature Immunology, 2020.](https://doi.org/10.1038/s41590-020-0654-0)
 
-**Principal Investigator:** [Katerina Akassoglou](https://akassogloulab.org/)
+**Corresponding author:** [Katerina Akassoglou](https://akassogloulab.org/)
 
 **License:** [Apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0.txt) 
 
