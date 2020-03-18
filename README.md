@@ -8,4 +8,4 @@ The R Shiny application in this repository has been deployed on the [shinyapps.i
 
 **License:** [Apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0.txt) 
 
-*The Shiny application was designed by the [Gladstone Institutes Bioinformatics Core](https://labs.gladstone.org/bioinformatics/index.html).*
+*This Shiny application was designed by the [Gladstone Institutes Bioinformatics Core](https://labs.gladstone.org/bioinformatics/index.html).*
