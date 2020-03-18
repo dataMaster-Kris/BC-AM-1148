@@ -4,6 +4,15 @@ library(ggplot2)
 library(Seurat)
 
 shinyServer(function(input, output, session) {
+  url <- a("Mendiola et al., Nature Immunology, 2020.", href="https://doi.org/10.1038/s41590-020-0654-0")
+  
+  output$Link_to_paper <- renderUI({
+    tagList("This is the single cell RNA-seq dataset accompanying ", url)
+  })
+  
+  output$blank <- renderText({
+    "   "
+  })
   
   output$legend <- renderImage({
     img_file <- if(input$dataset == "Toxseq_all_clusters_dataset1") {
@@ -19,7 +28,7 @@ shinyServer(function(input, output, session) {
   output$clusterNumUI <- renderUI({
 
     selectInput("clusterNum",
-                "Choose a cluster",
+                "Choose a cluster to compare with all other clusters for differentially expressed genes",
                 choices = levels(get(input$dataset)@meta.data$cluster_labels),
                 selected = levels(get(input$dataset)@meta.data$cluster_labels)[1]
     )
@@ -51,7 +60,8 @@ shinyServer(function(input, output, session) {
 
     VlnPlot(get(input$dataset),
             features = input$gene,
-            group.by = "cluster_labels")
+            group.by = "cluster_labels") +
+      xlab("Cluster Identity")
 
   })
 
@@ -65,6 +75,6 @@ shinyServer(function(input, output, session) {
     subset(this_data,
            cluster == input$clusterNum)
 
-  })
+  }, caption = "Table: Differentially expressed genes per cluster")
   
 })

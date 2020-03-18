@@ -5,6 +5,8 @@ shinyUI(fluidPage(
   
   # Application title
   titlePanel("Tox-seq viewer"),
+  uiOutput("Link_to_paper"),
+  verbatimTextOutput("blank"),
   
   sidebarLayout(
     
